@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 function getTitleFromPath(pathname: string) {
   if (pathname === "/resume") return "Resume";
-  if (pathname === "/work") return "Selected Work";
+  if (pathname === "/work") return "Projects & Works";
   if (pathname === "/contact") return "Contact";
   return "Home";
 }
