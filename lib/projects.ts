@@ -295,7 +295,7 @@ export const projects: Project[] = [
     clientType: "Consumer App",
     projectContext: "Recipe search app",
     image: "/projects/recipe-finder.png",
-    screenshots: ["/projects/recipe-finder.png"],
+    screenshots: ["/projects/recipie-finder.png"],
     liveUrl: "https://popor-recipie-finder.netlify.app/",
     order: 6,
   },
