@@ -1,6 +1,10 @@
 import PageSection from "@/components/PageSection";
+import SelectedWorkSection from "@/components/SelectedWorkSection";
+import { getFeaturedProjects } from "@/lib/projects";
 
 export default function HomePage() {
+  const featuredProjects = getFeaturedProjects().slice(0, 2);
+
   return (
     <div className="space-y-6">
       <PageSection
@@ -21,6 +25,8 @@ export default function HomePage() {
           description="I favor clear architecture, predictable components, and pragmatic UI decisions. The result is work that is easier to extend and easier to trust."
         />
       </section>
+
+      <SelectedWorkSection projects={featuredProjects} />
     </div>
   );
 }

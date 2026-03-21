@@ -26,10 +26,6 @@ const ProfilePanel = () => {
             <Sparkles className="h-3.5 w-3.5" />
             Portfolio
           </span>
-
-          <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-400/10 dark:text-emerald-300 dark:ring-emerald-400/20">
-            Available
-          </span>
         </div>
 
         <div className="relative mx-auto">
