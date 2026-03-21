@@ -12,9 +12,9 @@ const socialLinks = [
 ];
 
 const contactItems = [
-  { icon: Phone, label: "Phone", value: "+254 723 909 353" },
-  { icon: Mail, label: "Email", value: "beatrice@gmail.com" },
-  { icon: MapPin, label: "Location", value: "Nairobi, Kenya" },
+  { icon: Phone, label: "Phone", value: "+234 9164 228 242" },
+  { icon: Mail, label: "Email", value: "poporxr@gmail.com" },
+  { icon: MapPin, label: "Location", value: "Benue, Nigeria" },
 ];
 
 const ProfilePanel = () => {
@@ -52,8 +52,8 @@ const ProfilePanel = () => {
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-400">
             Frontend Developer
           </p>
-          <h1 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 lg:text-[1.75rem]">
-            Beatrice Wambui
+          <h1 className="mt-2 text-xl font-bold tracking-tight text-slate-950 lg:text-[1.75rem]">
+            Emmanuel Aondohemba
           </h1>
           <p className="mt-2 text-sm leading-6 text-slate-500">
             Building clean, scalable interfaces and premium modern web

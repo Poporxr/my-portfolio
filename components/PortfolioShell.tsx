@@ -33,7 +33,7 @@ const PortfolioShell = ({ children }: PortfolioShellProps) => {
               : "-translate-x-full lg:translate-x-0",
           ].join(" ")}
         >
-          <div className="h-full overflow-y-auto px-1 py-4 sm:px-5 sm:py-5 lg:px-6 lg:py-6">
+          <div className="h-full overflow-y-auto sm:px-3 sm:py-3 lg:px-2 lg:py-2">
             <ProfilePanel />
           </div>
         </aside>
@@ -51,9 +51,9 @@ const PortfolioShell = ({ children }: PortfolioShellProps) => {
             onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
           />
 
-          <div className="flex-1 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <div className="flex-1 py-5 sm:px-3 sm:py-3">
             <div className="mx-auto w-full max-w-6xl">
-              <div className="min-h-[calc(100vh-8rem)] rounded-[30px] border border-slate-200 bg-white p-4 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:p-6 lg:p-8">
+              <div className="min-h-[calc(100vh-8rem)] rounded-[30px] border border-slate-200 bg-white p-4 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:p-3 lg:p-2">
                 {children}
               </div>
             </div>
