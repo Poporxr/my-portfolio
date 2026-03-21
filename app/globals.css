@@ -1,4 +1,19 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --app-background: #f3f6fb;
+  --app-background-accent: rgba(255, 255, 255, 0.8);
+  --app-foreground: #0f172a;
+}
+
+.dark {
+  color-scheme: dark;
+  --app-background: #09090b;
+  --app-background-accent: rgba(255, 255, 255, 0.04);
+  --app-foreground: #f4f4f5;
+}
 
 * {
   box-sizing: border-box;
@@ -8,13 +23,23 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(circle at top, rgba(251, 191, 36, 0.08), transparent 30%),
+    var(--app-background);
 }
 
 body {
   margin: 0;
-  background: #f1f5f9;
-  color: #0f172a;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(251, 191, 36, 0.07), transparent 26%),
+    linear-gradient(180deg, var(--app-background-accent), transparent 22%),
+    var(--app-background);
+  color: var(--app-foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
 a {
@@ -50,10 +75,14 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(148, 163, 184, 0.55);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(113, 113, 122, 0.7);
 }

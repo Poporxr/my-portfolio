@@ -9,13 +9,13 @@ export default function ContactPage() {
         description="If you need a portfolio site, dashboard, or product interface implemented with care, reach out through email or phone and I can respond with scope and next steps."
       >
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Email</p>
-            <p className="mt-2 text-sm text-slate-900">beatrice@gmail.com</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/8 dark:bg-zinc-800/65">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-zinc-500">Email</p>
+            <p className="mt-2 text-sm text-slate-900 dark:text-zinc-100">beatrice@gmail.com</p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Phone</p>
-            <p className="mt-2 text-sm text-slate-900">+254723909353</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/8 dark:bg-zinc-800/65">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-zinc-500">Phone</p>
+            <p className="mt-2 text-sm text-slate-900 dark:text-zinc-100">+254723909353</p>
           </div>
         </div>
       </PageSection>

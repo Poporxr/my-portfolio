@@ -21,9 +21,9 @@ export default function WorkPage() {
       >
         <div className="grid gap-4">
           {projects.map((project) => (
-            <article key={project.name} className="rounded-2xl border border-slate-200 p-5">
-              <h3 className="text-lg font-semibold text-slate-900">{project.name}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">{project.summary}</p>
+            <article key={project.name} className="rounded-2xl border border-slate-200 p-5 dark:border-white/8 dark:bg-zinc-800/45">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-zinc-100">{project.name}</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-zinc-400">{project.summary}</p>
             </article>
           ))}
         </div>

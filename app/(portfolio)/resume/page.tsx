@@ -20,7 +20,7 @@ export default function ResumePage() {
           {skills.map((skill) => (
             <div
               key={skill}
-              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700"
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 dark:border-white/8 dark:bg-zinc-800/65 dark:text-zinc-200"
             >
               {skill}
             </div>
