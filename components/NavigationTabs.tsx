@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, FileText, Briefcase, Mail } from "lucide-react";
+import { Home, FileText, Briefcase, Mail, UserStar } from "lucide-react";
 
 const tabs = [
   { href: "/", match: "/", label: "Home", icon: Home },
   { href: "/resume", match: "/resume", label: "Resume", icon: FileText },
   { href: "/work", match: "/work", label: "Work", icon: Briefcase },
-  { href: "/contact", match: "/contact", label: "Contact", icon: Mail },
+  { href: "/contact", match: "/contact", label: "Contact", icon: UserStar },
 ];
 
 const NavigationTabs = () => {
