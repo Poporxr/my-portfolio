@@ -6,9 +6,9 @@ import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const socialLinks = [
   { icon: FaFacebook, href: "#", label: "Facebook" },
-  { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-  { icon: FaXTwitter, href: "#", label: "Twitter" },
-  { icon: FaGithub, href: "#", label: "GitHub" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/in/emmanuel-aondohemba-579a5a311", label: "LinkedIn" },
+  { icon: FaXTwitter, href: "https://x.com/emmanuel1115031?s=21", label: "Twitter" },
+  { icon: FaGithub, href: "https://github.com/Poporxr/", label: "GitHub" },
 ];
 
 const contactItems = [
