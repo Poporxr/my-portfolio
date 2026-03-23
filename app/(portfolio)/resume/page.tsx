@@ -1,5 +1,5 @@
 import PageSection from "@/components/PageSection";
-import Link from "next/link";
+import ResumeDownloadLink from "@/components/ResumeDownloadLink";
 
 const skills = [
   "Next.js",
@@ -162,13 +162,7 @@ export default function ResumePage() {
         description="For a complete version with contact details and links, use the downloadable resume."
       >
 <div className="flex flex-wrap gap-3">
-  <a
-    href="/Emmanuel_Aondohemba_Resume.pdf"
-    download
-    className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-900 px-4 py-3 text-sm font-semibold !text-white no-underline hover:bg-slate-800 dark:border-white/10 dark:bg-zinc-100 dark:!text-zinc-950 dark:hover:bg-white"
-  >
-    Download Resume
-  </a>
+  <ResumeDownloadLink />
 
   <a
     href="https://github.com/Poporxr"
