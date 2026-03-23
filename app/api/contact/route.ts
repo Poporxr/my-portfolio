@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     const { fullName, emailAddress, phoneNo, message, projectType, budget } =
       parsedBody.data;
 
-    await resend.emails.send({
+    const resendResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: process.env.CONTACT_TO_EMAIL,
       subject: `New portfolio message from ${fullName}`,
@@ -62,7 +62,18 @@ export async function POST(req: Request) {
       ].join("\n"),
     });
 
-    return NextResponse.json({ success: true });
+    if (resendResponse.error) {
+      return NextResponse.json(
+        {
+          error:
+            resendResponse.error.message ||
+            "Email delivery failed while sending your inquiry.",
+        },
+        { status: resendResponse.error.statusCode || 502 }
+      );
+    }
+
+    return NextResponse.json({ success: true, id: resendResponse.data?.id });
   } catch {
     return NextResponse.json(
       { error: "Something went wrong while sending your inquiry." },
