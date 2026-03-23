@@ -1,5 +1,6 @@
 "use client";
 
+import { ToastProvider } from "@/components/toast/ToastProvider";
 import { ThemeProvider } from "next-themes";
 
 type ProvidersProps = {
@@ -14,7 +15,7 @@ const Providers = ({ children }: ProvidersProps) => {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <ToastProvider>{children}</ToastProvider>
     </ThemeProvider>
   );
 };
