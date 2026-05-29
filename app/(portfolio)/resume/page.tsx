@@ -7,6 +7,8 @@ const skills = [
   "TypeScript",
   "JavaScript",
   "Tailwind CSS",
+  "Node.js",
+  "Express",
   "Prisma",
   "PostgreSQL",
   "Git & GitHub",
@@ -48,7 +50,7 @@ export default function ResumePage() {
       <PageSection
         eyebrow="Resume"
         title="A clear summary of my skills and project experience."
-        description="Frontend developer focused on building modern web applications, dashboards, and structured product interfaces."
+        description="Fullstack developer focused on building modern web applications, dashboards, APIs, and structured product interfaces."
       >
         <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="rounded-[26px] border border-slate-200 bg-slate-50/80 p-5 dark:border-white/10 dark:bg-zinc-800/60">
@@ -56,11 +58,11 @@ export default function ResumePage() {
               Profile
             </h3>
             <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-zinc-400">
-              I build clean, scalable, and responsive web applications with a
-              strong focus on modern UI, reusable components, and structured
-              frontend systems. My work is strongest in admin dashboards,
-              product interfaces, and frontend-heavy applications connected to
-              real workflows.
+              I build clean, scalable, and responsive fullstack applications
+              with a strong focus on modern UI, reusable components, API
+              design, and structured data-backed systems. My work is strongest
+              in admin dashboards, product interfaces, and applications
+              connected to real workflows.
             </p>
           </div>
 
@@ -79,7 +81,7 @@ export default function ResumePage() {
                 Focus
               </p>
               <p className="mt-2 text-sm text-slate-800 dark:text-zinc-200">
-                Frontend Engineering
+                Fullstack Engineering
               </p>
             </div>
 

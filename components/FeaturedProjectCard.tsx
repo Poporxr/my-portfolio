@@ -5,9 +5,10 @@ import type { Project } from "@/lib/projects";
 
 type FeaturedProjectCardProps = {
   project: Project;
+  compact?: boolean;
 };
 
-const FeaturedProjectCard = ({ project }: FeaturedProjectCardProps) => {
+const FeaturedProjectCard = ({ project, compact = false }: FeaturedProjectCardProps) => {
   const highlights = (project.keyFeatures ?? []).slice(0, 4);
 
   return (
@@ -45,40 +46,42 @@ const FeaturedProjectCard = ({ project }: FeaturedProjectCardProps) => {
             </p>
           </div>
 
-          <dl className="grid gap-4 text-sm sm:grid-cols-2">
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
-                Role
-              </dt>
-              <dd className="mt-1 text-slate-700 dark:text-zinc-200">{project.role}</dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
-                Timeframe
-              </dt>
-              <dd className="mt-1 text-slate-700 dark:text-zinc-200">{project.timeframe}</dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
-                Team
-              </dt>
-              <dd className="mt-1 text-slate-700 dark:text-zinc-200">
-                {project.teamType ?? "Not specified"}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
-                Context
-              </dt>
-              <dd className="mt-1 text-slate-700 dark:text-zinc-200">
-                {project.projectContext ?? project.clientType ?? "Product build"}
-              </dd>
-            </div>
-          </dl>
+          {!compact ? (
+            <dl className="grid gap-4 text-sm sm:grid-cols-2">
+              <div>
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
+                  Role
+                </dt>
+                <dd className="mt-1 text-slate-700 dark:text-zinc-200">{project.role}</dd>
+              </div>
+              <div>
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
+                  Timeframe
+                </dt>
+                <dd className="mt-1 text-slate-700 dark:text-zinc-200">{project.timeframe}</dd>
+              </div>
+              <div>
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
+                  Team
+                </dt>
+                <dd className="mt-1 text-slate-700 dark:text-zinc-200">
+                  {project.teamType ?? "Not specified"}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-zinc-500">
+                  Context
+                </dt>
+                <dd className="mt-1 text-slate-700 dark:text-zinc-200">
+                  {project.projectContext ?? project.clientType ?? "Product build"}
+                </dd>
+              </div>
+            </dl>
+          ) : null}
 
-          <StackTags techStack={project.techStack} limit={5} />
+          <StackTags techStack={project.techStack} limit={compact ? 4 : 5} />
 
-          {highlights.length > 0 ? (
+          {!compact && highlights.length > 0 ? (
             <ul className="grid gap-2 text-sm text-slate-600 dark:text-zinc-400">
               {highlights.map((item) => (
                 <li key={item} className="flex gap-2">

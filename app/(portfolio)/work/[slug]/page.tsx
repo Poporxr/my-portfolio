@@ -1,8 +1,31 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectActions from "@/components/ProjectActions";
 import StackTags from "@/components/StackTags";
-import { getProjectBySlug } from "@/lib/projects";
+import { getAllProjects, getProjectBySlug } from "@/lib/projects";
+
+export function generateStaticParams() {
+  return getAllProjects()
+    .filter((project) => project.slug)
+    .map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata(
+  props: PageProps<"/work/[slug]">
+): Promise<Metadata> {
+  const { slug } = await props.params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {};
+  }
+
+  return {
+    title: `${project.title} | Work`,
+    description: project.shortDescription,
+  };
+}
 
 export default async function ProjectDetailPage(
   props: PageProps<"/work/[slug]">
@@ -91,6 +114,22 @@ export default async function ProjectDetailPage(
               </h2>
               <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-600 dark:text-zinc-400">
                 {project.challenges.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-[0.55rem] h-1.5 w-1.5 flex-none rounded-full bg-amber-400 dark:bg-amber-300" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ) : null}
+
+          {project.outcomes?.length ? (
+            <article className="rounded-[28px] border border-slate-200/85 bg-white/88 p-6 ring-1 ring-white/70 backdrop-blur-sm dark:border-white/8 dark:bg-zinc-900/72 dark:ring-white/5">
+              <h2 className="text-xl font-semibold text-slate-950 dark:text-zinc-50">
+                Outcomes
+              </h2>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-600 dark:text-zinc-400">
+                {project.outcomes.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-[0.55rem] h-1.5 w-1.5 flex-none rounded-full bg-amber-400 dark:bg-amber-300" />
                     <span>{item}</span>

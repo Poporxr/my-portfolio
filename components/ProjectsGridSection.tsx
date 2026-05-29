@@ -1,16 +1,18 @@
 import ProjectCard from "@/components/ProjectCard";
-import type { Project } from "@/lib/projects";
+import type { ProjectWithPreview } from "@/lib/project-previews";
 
 type ProjectsGridSectionProps = {
   title: string;
   description: string;
-  projects: Project[];
+  projects: ProjectWithPreview[];
+  compactCards?: boolean;
 };
 
 const ProjectsGridSection = ({
   title,
   description,
   projects,
+  compactCards = false,
 }: ProjectsGridSectionProps) => {
   return (
     <section className="space-y-4">
@@ -27,9 +29,14 @@ const ProjectsGridSection = ({
       </div>
 
       {projects.length > 0 ? (
-        <div className="grid gap-5 xl:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div className="grid gap-5 sm:grid-cols-1 lg:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              compact={compactCards}
+              eagerPreview={index < 2}
+            />
           ))}
         </div>
       ) : (

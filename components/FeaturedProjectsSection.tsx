@@ -3,10 +3,12 @@ import type { Project } from "@/lib/projects";
 
 type FeaturedProjectsSectionProps = {
   projects: Project[];
+  compactCards?: boolean;
 };
 
 const FeaturedProjectsSection = ({
   projects,
+  compactCards = false,
 }: FeaturedProjectsSectionProps) => {
   if (projects.length === 0) {
     return null;
@@ -25,7 +27,11 @@ const FeaturedProjectsSection = ({
 
       <div className="grid gap-6">
         {projects.map((project) => (
-          <FeaturedProjectCard key={project.id} project={project} />
+          <FeaturedProjectCard
+            key={project.id}
+            project={project}
+            compact={compactCards}
+          />
         ))}
       </div>
     </section>

@@ -1,15 +1,18 @@
 import WorkProjectsBrowser from "@/components/WorkProjectsBrowser";
+import { addProjectPreviews } from "@/lib/project-previews";
 import {
-  getFeaturedProjects,
+  getAllProjects,
   getProjectCategories,
-  getStandardProjects,
 } from "@/lib/projects";
 
+export const revalidate = 86400;
+
 export default function WorkPage() {
+  const projects = addProjectPreviews(getAllProjects());
+
   return (
     <WorkProjectsBrowser
-      featuredProjects={getFeaturedProjects()}
-      standardProjects={getStandardProjects()}
+      projects={projects}
       categories={getProjectCategories()}
     />
   );

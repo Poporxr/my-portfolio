@@ -40,6 +40,134 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "studora",
+    slug: "studora",
+    title: "Studora",
+    shortDescription:
+      "An AI-powered academic platform for Nigerian university students.",
+    longDescription:
+      "Studora is a modern academic platform designed to help students access organized course resources, use AI study tools, manage academic productivity, and connect through a social academic feed across universities in Nigeria.",
+    category: "SaaS / EdTech",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Prisma",
+      "Clerk",
+      "Cloudflare R2",
+      "Resend",
+    ],
+    status: "In Progress",
+    role: "Founder & Full-Stack Developer",
+    timeframe: "2025 - Present",
+    teamType: "Solo",
+    contributionSummary:
+      "Designed the product vision, user experience, database structure, authentication flow, resource system, AI tools, and waitlist launch strategy.",
+    problem:
+      "Many Nigerian university students struggle with scattered course materials, poor access to past questions, unorganized academic resources, and limited collaboration across departments and universities.",
+    solution:
+      "Built a centralized academic platform where students can access resources, interact with AI study tools, follow academic feeds, manage productivity, and discover useful materials from their university and other universities across Nigeria.",
+    impact:
+      "Studora aims to make academic resources easier to access, improve study productivity, and create a connected academic network for Nigerian students.",
+    keyFeatures: [
+      "University-based student onboarding",
+      "Course resources and academic materials",
+      "AI note summarizer",
+      "PDF chat",
+      "Flashcard generator",
+      "Quiz generator",
+      "GPA calculator",
+      "Timetable planner",
+      "Academic feed for university-based posts",
+      "Cross-university academic discovery",
+      "Waitlist system for early users",
+    ],
+    challenges: [
+      "Designing a scalable structure for multiple Nigerian universities",
+      "Balancing academic resource management with social feed features",
+      "Creating a premium student-focused UI without making it feel crowded",
+      "Planning access control for students, course reps, lecturers, and admins",
+      "Structuring the platform for high usage during exam periods",
+    ],
+    outcomes: [
+      "Built a strong product foundation for a Nigerian EdTech platform",
+      "Created a waitlist-based launch strategy",
+      "Designed a scalable multi-university experience",
+      "Developed core academic tools and resource workflows",
+    ],
+    metrics: [
+      { label: "Type", value: "Startup Product" },
+      { label: "Market", value: "Nigerian Universities" },
+      { label: "Focus", value: "AI + Academic Resources" },
+      { label: "Launch Stage", value: "Waitlist" },
+    ],
+    clientType: "Personal Startup / SaaS Product",
+    projectContext:
+      "AI-powered academic platform built to support students across Nigerian universities",
+    image: "/projects/studora.png",
+    screenshots: ["/projects/studora.png"],
+    liveUrl: "https://studora.com.ng/",
+    githubUrl: undefined,
+    featured: true,
+    order: 1,
+  },
+  {
+    id: "high-dream-chasers",
+    slug: "high-dream-chasers",
+    title: "High Dream Chasers",
+    shortDescription:
+      "A modern e-commerce website for product browsing, online visibility, and customer checkout.",
+    longDescription:
+      "High Dream Chasers is a client e-commerce platform built to help customers explore products, view details, and complete purchases through a smooth online shopping experience.",
+    category: "E-commerce",
+    techStack: ["Next.js", "Firebase", "Paystack", "Tailwind CSS"],
+    status: "Live",
+    role: "Full-Stack Developer",
+    timeframe: "2025",
+    teamType: "Solo",
+    contributionSummary:
+      "Designed and built the frontend, product browsing experience, backend integration, and payment flow.",
+    problem:
+      "The business needed a stronger online presence and a reliable way for customers to view products and make purchases without depending only on social media or manual conversations.",
+    solution:
+      "Built a responsive e-commerce website with product listing, product details, Firebase-powered data handling, and Paystack payment integration for online checkout.",
+    impact:
+      "Improved the business’s digital presence and created a more professional shopping experience for customers.",
+    keyFeatures: [
+      "Responsive e-commerce interface",
+      "Product listing and product detail pages",
+      "Firebase backend integration",
+      "Paystack payment integration",
+      "Mobile-friendly shopping experience",
+      "Clean and modern product presentation",
+    ],
+    challenges: [
+      "Creating a smooth product browsing experience across mobile and desktop",
+      "Integrating payment flow in a simple and reliable way",
+      "Structuring the project to be maintainable as products increase",
+    ],
+    outcomes: [
+      "Delivered a live client e-commerce website",
+      "Created a reusable structure for product-based businesses",
+      "Improved confidence working with real client requirements",
+    ],
+    metrics: [
+      { label: "Type", value: "Client Project" },
+      { label: "Platform", value: "E-commerce Website" },
+      { label: "Payment", value: "Paystack" },
+    ],
+    clientType: "Business / E-commerce Client",
+    projectContext:
+      "Client e-commerce website for online product visibility and checkout",
+    image: "/projects/high-dream-chasers.png",
+    screenshots: ["/projects/high-dream-chasers.png"],
+    liveUrl: "https://highdreamchasers.com.ng/",
+    githubUrl: undefined,
+    featured: true,
+    order: 2,
+  },
+  {
     id: "prext-ecommerce",
     slug: "prext-ecommerce",
     title: "Prext E-commerce",
@@ -80,7 +208,8 @@ export const projects: Project[] = [
     image: "/projects/prext-ecommerce.png",
     screenshots: ["/projects/prext-ecommerce.svg"],
     liveUrl: "https://prext-ecommerce.netlify.app/",
-    order: 1,
+    featured: true,
+    order: 3,
   },
   {
     id: "schola-hub-erp",
@@ -118,15 +247,14 @@ export const projects: Project[] = [
       "Centralized operations",
       "Reusable system modules",
     ],
-    metrics: [
-      { label: "Core Modules", value: "8+" },
-    ],
+    metrics: [{ label: "Core Modules", value: "8+" }],
     clientType: "Education",
     projectContext: "School management ERP",
     image: "/projects/schola-hub.png",
-    screenshots: ["/projects/schola-hub-erp.png"],
+    screenshots: ["/projects/schola-hub.png"],
     liveUrl: "https://schola-hub-erp.vercel.app/",
-    order: 2,
+    featured: true,
+    order: 4,
   },
   {
     id: "qlink-mobility-power",
@@ -161,15 +289,14 @@ export const projects: Project[] = [
     outcomes: [
       "Clearer product messaging",
     ],
-    metrics: [
-      { label: "Categories", value: "3+" },
-    ],
+    metrics: [{ label: "Categories", value: "3+" }],
     clientType: "Mobility & Energy",
     projectContext: "Marketing website",
     image: "/projects/qlink.png",
-    screenshots: ["/projects/qlink-mobility-power.png"],
+    screenshots: ["/projects/qlink.png"],
     liveUrl: "https://qlink-seven.vercel.app/",
-    order: 3,
+    featured: true,
+    order: 5,
   },
   {
     id: "dev-events-platform",
@@ -203,16 +330,14 @@ export const projects: Project[] = [
     outcomes: [
       "Reusable event UI patterns",
     ],
-    metrics: [
-      { label: "Views", value: "List + Detail" },
-    ],
+    metrics: [{ label: "Views", value: "List + Detail" }],
     clientType: "Developer Platform",
     projectContext: "Event platform",
     image: "/projects/dev-events.png",
     screenshots: ["/projects/dev-events.png"],
     liveUrl: "https://popor-dev-events.vercel.app/",
     githubUrl: "https://github.com/Poporxr/Popor-devEvents",
-    order: 4,
+    order: 6,
   },
   {
     id: "react-chatbot",
@@ -246,16 +371,14 @@ export const projects: Project[] = [
     outcomes: [
       "Reusable chat patterns",
     ],
-    metrics: [
-      { label: "Type", value: "Conversational UI" },
-    ],
+    metrics: [{ label: "Type", value: "Conversational UI" }],
     clientType: "Interactive App",
     projectContext: "Chat UI experiment",
     image: "/projects/chat-bot.png",
     screenshots: ["/projects/chat-bot.png"],
     liveUrl: "https://popor-chatbot.netlify.app/",
     githubUrl: "https://github.com/Poporxr/Chatbot-React",
-    order: 5,
+    order: 7,
   },
   {
     id: "recipe-finder",
@@ -289,17 +412,15 @@ export const projects: Project[] = [
     outcomes: [
       "Reusable search patterns",
     ],
-    metrics: [
-      { label: "Source", value: "API" },
-    ],
+    metrics: [{ label: "Source", value: "API" }],
     clientType: "Consumer App",
     projectContext: "Recipe search app",
     image: "/projects/recipe-finder.png",
     screenshots: ["/projects/recipe-finder.png"],
     liveUrl: "https://popor-recipe-finder.netlify.app/",
-    order: 6,
+    order: 8,
   },
-];;
+];
 
 export const sortProjects = (items: Project[]) =>
   [...items].sort((left, right) => {

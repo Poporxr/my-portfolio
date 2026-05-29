@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { Download, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import DownloadResume from "./DownloadResume";
 
@@ -19,6 +20,8 @@ const contactItems = [
 ];
 
 const ProfilePanel = () => {
+  const [profileImage, setProfileImage] = useState("/profile-photo.jpeg");
+
   return (
     <aside className="flex min-h-full min-w-0 flex-col rounded-[30px] border border-slate-200/80 bg-white/90 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] ring-1 ring-white/70 backdrop-blur-sm dark:border-white/8 dark:bg-zinc-900/72 dark:shadow-[0_22px_60px_rgba(0,0,0,0.38)] dark:ring-white/5 lg:p-7">
       <div className="flex flex-col gap-6 lg:gap-7">
@@ -32,12 +35,13 @@ const ProfilePanel = () => {
         <div className="relative mx-auto">
           <div className="relative h-36 w-36 overflow-hidden rounded-[28px] bg-slate-100 shadow-[0_14px_30px_rgba(15,23,42,0.10)] ring-4 ring-slate-50 dark:bg-zinc-800 dark:shadow-[0_18px_40px_rgba(0,0,0,0.35)] dark:ring-zinc-900">
             <Image
-              src="/profile-placeholder.svg"
-              alt="Beatrice Wambui"
+              src={profileImage}
+              alt="Emmanuel Aondohemba"
               width={144}
               height={144}
               loading="eager"
-              className="h-full w-full object-cover"
+              onError={() => setProfileImage("/profile-placeholder.svg")}
+              className="h-full w-full object-cover object-[50%_24%]"
             />
           </div>
 
@@ -48,14 +52,14 @@ const ProfilePanel = () => {
 
         <div className="text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-400 dark:text-zinc-500">
-            Frontend Developer
+            Fullstack Developer
           </p>
           <h1 className="mt-2 text-xl font-bold tracking-tight text-slate-950 dark:text-zinc-50 lg:text-[1.75rem]">
             Emmanuel Aondohemba
           </h1>
           <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-zinc-400">
-            Building clean, scalable interfaces and premium modern web
-            experiences.
+            Building clean fullstack products with reliable backend systems,
+            polished interfaces, and practical delivery.
           </p>
         </div>
 
