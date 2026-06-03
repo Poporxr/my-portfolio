@@ -417,7 +417,7 @@ export const projects: Project[] = [
     projectContext: "Recipe search app",
     image: "/projects/recipe-finder.png",
     screenshots: ["/projects/recipe-finder.png"],
-    liveUrl: "https://popor-recipe-finder.netlify.app/",
+    liveUrl: "https://popor-recipie-finder.netlify.app/",
     order: 8,
   },
 ];
