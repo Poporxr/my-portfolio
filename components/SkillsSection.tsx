@@ -1,145 +1,114 @@
 import Image from "next/image";
 import type { IconType } from "react-icons";
 import { SiExpress, SiNodedotjs, SiPostgresql, SiPrisma } from "react-icons/si";
-import PageSection from "@/components/PageSection";
 
 type Skill = {
   name: string;
-  category: string;
-  description: string;
   logo?: string;
   icon?: IconType;
   iconColor?: string;
+  textLabel?: string;
 };
 
-const skills: Skill[] = [
+type SkillGroup = {
+  label: string;
+  skills: Skill[];
+};
+
+const groups: SkillGroup[] = [
   {
-    name: "Next.js",
-    logo: "/skills/nextdotjs.svg",
-    category: "Framework",
-    description: "Handles routing, rendering, and production-ready React app structure.",
+    label: "Frontend",
+    skills: [
+      { name: "Next.js", logo: "/skills/nextdotjs.svg" },
+      { name: "React", logo: "/skills/react.svg" },
+      { name: "TypeScript", logo: "/skills/typescript.svg" },
+      { name: "Tailwind CSS", logo: "/skills/tailwindcss.svg" },
+    ],
   },
   {
-    name: "React",
-    logo: "/skills/react.svg",
-    category: "Library",
-    description: "Powers reusable components, interactive UI states, and client-side flows.",
+    label: "Backend & Data",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs, iconColor: "#5fa04e" },
+      { name: "Express", icon: SiExpress },
+      { name: "PostgreSQL", icon: SiPostgresql, iconColor: "#4169e1" },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Python", logo: "/skills/python.svg" },
+      { name: "FastAPI", logo: "/skills/fastapi.svg" },
+      { name: "Firebase", logo: "/skills/firebase.svg" },
+    ],
   },
   {
-    name: "TypeScript",
-    logo: "/skills/typescript.svg",
-    category: "Language",
-    description: "Adds strong typing so components, data, and props stay predictable.",
+    label: "Cloud & Infrastructure",
+    skills: [
+      { name: "AWS", logo: "/skills/amazonwebservices.svg" },
+      { name: "Google Cloud", logo: "/skills/googlecloud.svg" },
+      { name: "Vercel", logo: "/skills/vercel.svg" },
+      { name: "Cloudflare", logo: "/skills/cloudflare.svg" },
+      { name: "Render", logo: "/skills/render.svg" },
+      { name: "Modal", logo: "/skills/modal.svg" },
+      { name: "Cloudinary", logo: "/skills/cloudinary.svg" },
+    ],
   },
   {
-    name: "JavaScript",
-    logo: "/skills/javascript.svg",
-    category: "Language",
-    description: "Drives browser behavior, dynamic data handling, and application logic.",
-  },
-  {
-    name: "Tailwind CSS",
-    logo: "/skills/tailwindcss.svg",
-    category: "Styling",
-    description: "Builds responsive layouts quickly with consistent utility-based styling.",
-  },
-  {
-    name: "Node.js",
-    icon: SiNodedotjs,
-    iconColor: "#5fa04e",
-    category: "Runtime",
-    description: "Runs backend services, APIs, scripts, and server-side application logic.",
-  },
-  {
-    name: "Express",
-    icon: SiExpress,
-    iconColor: "#111827",
-    category: "Backend",
-    description: "Structures lightweight API routes, middleware, and server endpoints.",
-  },
-  {
-    name: "PostgreSQL",
-    icon: SiPostgresql,
-    iconColor: "#4169e1",
-    category: "Database",
-    description: "Stores relational application data with strong querying and reliability.",
-  },
-  {
-    name: "Prisma",
-    icon: SiPrisma,
-    iconColor: "#2d3748",
-    category: "ORM",
-    description: "Connects TypeScript apps to databases with typed models and queries.",
-  },
-  {
-    name: "HTML5",
-    logo: "/skills/html5.svg",
-    category: "Markup",
-    description: "Provides accessible page structure and clean semantic foundations.",
-  },
-  {
-    name: "CSS3",
-    logo: "/skills/css.svg",
-    category: "Styling",
-    description: "Controls visual polish, responsive behavior, and detailed interface styling.",
-  },
-  {
-    name: "GitHub",
-    logo: "/skills/github.svg",
-    category: "Workflow",
-    description: "Supports version control, collaboration, and project delivery history.",
+    label: "Mobile & Tools",
+    skills: [
+      { name: "React Native", logo: "/skills/react.svg" },
+      { name: "Paystack", textLabel: "P" },
+      { name: "GitHub", logo: "/skills/github.svg" },
+    ],
   },
 ];
 
 const SkillsSection = () => {
   return (
-    <PageSection
-      eyebrow="Core Stack"
-      title="Tools I use to design and ship fullstack web products."
-      description="A concise view of the technologies I use most often when building scalable interfaces, APIs, and data-backed products."
-    >
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        {skills.map((skill) => (
-          <article
-            key={skill.name}
-            className="group rounded-[26px] border border-slate-200 bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-zinc-900/75 dark:shadow-[0_10px_28px_rgba(0,0,0,0.22)]"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-zinc-800">
-                {skill.logo ? (
-                  <Image
-                    src={skill.logo}
-                    alt={skill.name}
-                    width={24}
-                    height={24}
-                    className="h-6 w-6 object-contain"
-                  />
-                ) : skill.icon ? (
-                  <skill.icon
-                    aria-label={skill.name}
-                    className="h-6 w-6"
-                    style={{ color: skill.iconColor }}
-                  />
-                ) : null}
-              </div>
-
-              <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:bg-zinc-800 dark:text-zinc-400">
-                {skill.category}
-              </span>
-            </div>
-
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold tracking-tight text-slate-900 dark:text-zinc-100">
-                {skill.name}
-              </h3>
-              <p className="mt-1 text-sm leading-6 text-slate-500 dark:text-zinc-400">
-                {skill.description}
-              </p>
-            </div>
-          </article>
-        ))}
+    <section className="space-y-6">
+      <div>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400 dark:text-zinc-500">
+          Core Stack
+        </p>
+        <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-50 sm:text-[1.9rem]">
+          The tools I build with
+        </h2>
       </div>
-    </PageSection>
+
+      {groups.map((group) => (
+        <div key={group.label} className="space-y-3">
+          <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-zinc-500">
+            {group.label}
+          </h3>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {group.skills.map((skill) => (
+              <div key={skill.name} className="flex items-center gap-3 py-1">
+                <span className="flex h-8 w-8 flex-none items-center justify-center">
+                  {skill.logo ? (
+                    <Image
+                      src={skill.logo}
+                      alt={skill.name}
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 object-contain"
+                    />
+                  ) : skill.icon ? (
+                    <skill.icon
+                      aria-label={skill.name}
+                      className="h-6 w-6 text-slate-700 dark:text-zinc-200"
+                      style={skill.iconColor ? { color: skill.iconColor } : undefined}
+                    />
+                  ) : skill.textLabel ? (
+                    <span className="text-base font-bold text-slate-900 dark:text-zinc-50">
+                      {skill.textLabel}
+                    </span>
+                  ) : null}
+                </span>
+                <h4 className="min-w-0 text-sm font-semibold text-slate-900 dark:text-zinc-100">
+                  {skill.name}
+                </h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
   );
 };
 

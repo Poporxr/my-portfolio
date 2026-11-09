@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Full name is required."),
   emailAddress: z
@@ -11,10 +9,8 @@ const contactSchema = z.object({
     .trim()
     .min(1, "Email address is required.")
     .email("Enter a valid email address."),
-  phoneNo: z.string().trim().min(1, "Phone number is required."),
-  message: z.string().trim().min(1, "Message is required."),
   projectType: z.string().trim().optional(),
-  budget: z.string().trim().optional(),
+  message: z.string().trim().min(1, "Message is required."),
 });
 
 export async function POST(req: Request) {
@@ -42,8 +38,9 @@ export async function POST(req: Request) {
       );
     }
 
-    const { fullName, emailAddress, phoneNo, message, projectType, budget } =
-      parsedBody.data;
+    const { fullName, emailAddress, projectType, message } = parsedBody.data;
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const resendResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
@@ -53,9 +50,7 @@ export async function POST(req: Request) {
       text: [
         `Full name: ${fullName}`,
         `Email address: ${emailAddress}`,
-        `Phone number: ${phoneNo}`,
         `Project type: ${projectType || "Not provided"}`,
-        `Budget or timeline: ${budget || "Not provided"}`,
         "",
         "Message:",
         message,

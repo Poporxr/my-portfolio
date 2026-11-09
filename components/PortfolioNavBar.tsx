@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { PanelLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import NavigationTabs from "@/components/NavigationTabs";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -29,7 +29,7 @@ const PortfolioNavBar = ({ onToggleSidebar }: PortfolioNavBarProps) => {
             aria-label="Open profile panel"
             className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200/90 bg-white/90 text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70 dark:border-white/10 dark:bg-white/[0.05] dark:text-zinc-100 dark:hover:bg-white/[0.08] lg:hidden"
           >
-            <Menu className="h-5 w-5" />
+            <PanelLeft className="h-5 w-5" />
           </button>
 
           <div className="min-w-0">
